@@ -53,7 +53,7 @@ namespace WebApp01.Controllers
         public ActionResult EditarCadastro(int id)
         {
             var UsuarioModel = new UsuarioViewModel();
-            UsuarioModel.Usuario = usuarioService.GetUSUSU(id);
+            UsuarioModel.Usuario = usuarioService.GetUsuarioDapper(id);
             return View(UsuarioModel);
         }
 

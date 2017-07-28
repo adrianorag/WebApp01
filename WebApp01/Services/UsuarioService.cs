@@ -33,7 +33,6 @@ namespace WebApp01.Services
             using (var db = new WebAppBDContext())
             {
                 usuario = db.Usuario.Where(p => p.Id== ID).ToList().FirstOrDefault();
-                //.SqlQuery<Usuario>("Select * from Usuario Where Id = {0}", new object[] { ID }).ToList().FirstOrDefault();
             }
 
             return usuario;
@@ -62,11 +61,11 @@ namespace WebApp01.Services
         }
 
 
-        public Usuario GetUSUSU(int ID)
+        public Usuario GetUsuarioDapper(int ID)
         {
             using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["WebAppBDContext"].ConnectionString))
             {
-                return db.Query<Usuario>("Select * from Usuario Where Id = @id", new { ID }).SingleOrDefault();
+                return db.Query<Usuario>("Select * from Usuarios Where Id = @ID", new { ID }).SingleOrDefault();
             }
 
         }

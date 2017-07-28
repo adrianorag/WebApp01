@@ -9,6 +9,6 @@ namespace WebApp01.Services
         List<Usuario> GetAllUsuarios();
         int SaveUsuario(Usuario usuario);
         Usuario GetUsuario(int ID);
-        Usuario GetUSUSU(int ID);
+        Usuario GetUsuarioDapper(int ID);
     }
 }
